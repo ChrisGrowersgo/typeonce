@@ -16,10 +16,12 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class="px-6 md:px-12 bg-white text-black dark:bg-gray-900 dark:text-white transition-colors duration-300">
 		<slot />
 	</body>
 </html>
+
+<!-- 
 <style is:global>
 	:root {
 		--accent: 136, 58, 234;
@@ -34,7 +36,7 @@ const { title } = Astro.props;
 	}
 	html {
 		font-family: system-ui, sans-serif;
-		background: #13151a;
+		/*background: #13151a;*/
 	}
 	code {
 		font-family:
@@ -48,3 +50,4 @@ const { title } = Astro.props;
 			monospace;
 	}
 </style>
+-->

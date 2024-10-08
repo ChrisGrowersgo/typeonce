@@ -1,0 +1,85 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Box from "../components/Box.astro";
+---
+
+<Layout title="home">
+
+   <button
+    id="theme-toggle"
+    class="bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200 py-2 px-4 rounded-md"
+  >
+    Change theme
+  </button>
+
+  <Header />
+
+  <div class="flex items-center space-x-4 p-6 max-w-4xl mx-auto">
+    <div class="flex-none">
+      <img
+        loading="lazy"
+        src="img/sandromaglione-big.png"
+        alt="Author Sandro Maglione"
+        width="150"
+        height="150"
+        class="rounded-full"
+      />
+    </div>
+    <p class="text-[1.5rem] leading-[1.8]">
+      I am Sandro, a Software Engineer specialized in writing type-safe
+      TypeScript code with a passion in training other engineers
+    </p>
+  </div>
+
+  <p
+    class="flex items-center space-x-4 p-6 max-w-4xl mx-auto text-[1.5rem] leading-[1.8]"
+  >
+    Stuck in a bug for days? Unsure on the best approach to implement a feature?
+    Struggling to understand documentation? Hard to find resources for your
+    specific use case? I am here to help!
+  </p>
+
+  <div class="max-w-4xl mx-auto space-y-4 p-6">
+    <Box>
+      Respond to your questions and solve bugs in minutes instead of days
+    </Box>
+
+    <Box>
+      Advance your career and skills without struggling by yourself for months
+    </Box>
+
+    <Box>
+      Code reviews to advise you on best practices and alternative
+      implementations
+    </Box>
+
+    <Box>
+      Implement, explain, and document features to make you progress faster
+    </Box>
+  </div>
+
+</Layout>
+
+
+<script>
+   const themeToggle = document.getElementById("theme-toggle");
+   const html = document.documentElement;
+
+   const savedTheme = localStorage.getItem("theme");
+   if (savedTheme) {
+     html.classList.add(savedTheme);
+   }
+
+   if (themeToggle) {
+     themeToggle.addEventListener("click", () => {
+       if (html.classList.contains("dark")) {
+         html.classList.remove("dark");
+         localStorage.setItem("theme", "");
+       } else {
+         html.classList.add("dark");
+         localStorage.setItem("theme", "dark");
+       }
+     });
+   }
+ </script>
