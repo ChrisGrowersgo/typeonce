@@ -1,0 +1,11 @@
+{
+  "greeting": "Hola, soy Sandro",
+  "description": "Soy un Ingeniero de Software especializado en escribir código TypeScript seguro y tengo pasión por entrenar a otros ingenieros.",
+  "help_message": "¿Atascado en un bug durante días? ¿No estás seguro de la mejor forma de implementar una característica? ¡Estoy aquí para ayudar!",
+  "boxes": [
+    "Responde a tus preguntas y resuelve bugs en minutos en lugar de días.",
+    "Avanza en tu carrera y habilidades sin luchar por tu cuenta durante meses.",
+    "Revisiones de código para aconsejarte sobre las mejores prácticas y alternativas de implementación.",
+    "Implementa, explica y documenta características para avanzar más rápido."
+  ]
+}

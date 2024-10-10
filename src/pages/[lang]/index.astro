@@ -1,0 +1,58 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Box from "../../components/Box.astro";
+import Nav from "../../components/Nav.astro";
+import { getTranslations } from '../../utils/i18n.js';
+
+// Obtener el parámetro del idioma desde la URL
+const { lang } = Astro.params;
+
+// Obtener las traducciones para el idioma actual
+const translations = await getTranslations(lang);
+
+// Definir las rutas estáticas para generar páginas
+export async function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'es' } },
+  ];
+}
+---
+
+<Layout title="home">
+
+  <Nav />
+
+  <Header />
+
+  <div class="flex items-center space-x-4 p-6 max-w-4xl mx-auto">
+    <div class="flex-none">
+      <img
+        loading="lazy"
+        src="/img/sandromaglione-big.png"
+        alt="Author Sandro Maglione"
+        width="150"
+        height="150"
+        class="rounded-full"
+      />
+    </div>
+    <p class="text-[1.5rem] leading-[1.8]">
+      {translations.greeting}
+    </p>
+  </div>
+
+  <p class="flex items-center space-x-4 p-6 max-w-4xl mx-auto text-[1.5rem] leading-[1.8]">
+    {translations.help_message}
+  </p>
+
+  <div class="max-w-4xl mx-auto space-y-4 p-6">
+    {translations.boxes.map((text:string) => (
+      <Box text={text} />
+    ))}
+  </div>
+
+</Layout>
+
+
+
